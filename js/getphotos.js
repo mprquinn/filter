@@ -6,8 +6,9 @@ $(document).ready(function(){
 		$('.feed').fadeIn();
 		setTimeout(gridShit, 2000);
 		// gridShit();
+		
 	});
-	;
+
 });
 
 
@@ -54,9 +55,10 @@ function searchPhotos(searchString){
         		imgTags = data.data[i].tags.length;
         		imgRatio = Math.round((imgLikes / imgTags) * 100);
         		console.log(imgRatio);
-        		$('.feed').append('<div class="span4 photo"><img src="' + imgSrc + '"/><p><div class="progress">\
+        		$('.feed').append('<div class="span4 photo"><img src="' + imgSrc + '"/><p>Number of hastags: ' + imgTags + '<br />\
+        		Number of Likes: ' + imgLikes +'</p><p><div class="progress">\
 				<div class="bar bar-success" style="width:' + imgRatio + '%;" data-width="'+ imgRatio + '">\
-				</div></div></div>');
+				</div></div</p></div>');
       		}     
                             
         }

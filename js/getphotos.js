@@ -1,8 +1,10 @@
 $(document).ready(function(){
 	$('.search').click(function(){
+		$('.feed').empty();
 		var searchString = $('#search').val();
 		searchPhotos(searchString);
-		setTimeout(gridShit, 1000);
+		$('.feed').fadeIn();
+		setTimeout(gridShit, 2000);
 		// gridShit();
 	});
 	;
@@ -10,16 +12,25 @@ $(document).ready(function(){
 
 
 function gridShit(){
-	console.log('HELLO');
 	var step = 3;
 	var divs = $('.feed .span4');
-
+	var bar;
+	var width;
 	divs.each(function(i){
-		console.log('inside grid');
+		bar = $(this).find('.progress .bar');
+		width = $(this).find('.progress .bar').data('width');
 		if( i % step == 0 ){
 			divs.slice(i, i+step).wrapAll('<div class="row">');
 		}
+		if(width < 30){
+			bar.removeClass('bar-success').addClass('bar-danger');
+		}
+		else if(width > 30 && width < 60){
+			bar.removeClass('bar-success').addClass('bar-warning');
+		}
+		$(this).fadeIn(500);
 	});
+
 
 
 }
@@ -44,7 +55,7 @@ function searchPhotos(searchString){
         		imgRatio = Math.round((imgLikes / imgTags) * 100);
         		console.log(imgRatio);
         		$('.feed').append('<div class="span4 photo"><img src="' + imgSrc + '"/><p><div class="progress">\
-				<div class="bar bar-success" style="width:' + imgRatio + '%;">\
+				<div class="bar bar-success" style="width:' + imgRatio + '%;" data-width="'+ imgRatio + '">\
 				</div></div></div>');
       		}     
                             

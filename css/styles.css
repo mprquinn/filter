@@ -1,0 +1,68 @@
+/*-----------
+
+Structure
+
+-----------*/
+
+body{
+
+}
+
+.navbar-inverse .navbar-inner{
+	background: #2980b9;
+}
+
+.navbar-inner{
+	border-color: #2c3e50;
+}
+
+.navbar .brand{
+	color: #fff;
+	text-shadow: inset 1px 1px 0 #000;
+}
+
+.btn-primary{
+	background: #e74c3c;
+	border-color: #e74c3c;
+}
+
+.btn-primary:hover{
+	background: #c0392b;
+}
+
+.photo{
+	background: #1d1d1d;
+	color: #eee;
+	min-height: 215px;
+	/*height: 215px;*/
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 10px;
+	position: relative;
+}
+
+p{
+	margin: 10px 0;
+}
+
+.photo p{
+	max-width: 90%;
+	margin: 10 auto;
+}
+
+.photo img{
+	/*display: none;*
+/}
+
+.frame{
+	position: absolute;
+	top: 5%;
+	bottom: 5%;
+	width: 90%;
+	left: 5%;
+	background: #1d1d1d;
+}
+
+.row{
+	margin-top: 30px;
+}

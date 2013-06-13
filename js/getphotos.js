@@ -3,13 +3,10 @@ $(document).ready(function(){
 		$('.feed').empty();
 		var searchString = $('#search').val();
 		searchPhotos(searchString);
-		$('.feed').fadeIn();
-		setTimeout(gridShit, 2000);
-		// gridShit();
-		
 	});
 
 });
+
 
 
 function gridShit(){
@@ -40,6 +37,8 @@ function searchPhotos(searchString){
 	var imgSrc;
 	var imgTitle;
 	var imgRatio;
+	var totalLikes = 0;
+	var totalTags = 0;
 
    $.ajax({
     	type: "GET",
@@ -59,10 +58,21 @@ function searchPhotos(searchString){
         		Number of Likes: ' + imgLikes +'</p><p><div class="progress">\
 				<div class="bar bar-success" style="width:' + imgRatio + '%;" data-width="'+ imgRatio + '">\
 				</div></div</p></div>');
-      		}     
+      			console.log(typeof(imgLikes));
+      			totalLikes = totalLikes + imgLikes;
+      			totalTags = totalTags + imgTags;
+      		}  
+      		console.log(totalLikes);
+        	console.log(totalTags);   
+      	},
+      	error: function(){
+      		console.log('error');
+      	},
+      	complete: function(){
+      		console.log('complete');
+      		$('.feed').fadeIn(200);
+			gridShit();      	}
                             
-        }
-
     });
 }
  

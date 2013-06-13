@@ -53,8 +53,8 @@ p{
 }
 
 .photo img{
-	/*display: none;*
-/}
+	/*display: none;*/
+}
 
 .frame{
 	position: absolute;
@@ -67,4 +67,15 @@ p{
 
 .row{
 	margin-top: 30px;
+}
+
+/*---------------
+
+	Results
+
+----------------*/
+
+.results{
+	display: none;
+	height: 0;
 }

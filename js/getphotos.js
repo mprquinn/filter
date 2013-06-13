@@ -26,7 +26,7 @@ function gridShit(){
 		else if(width > 30 && width < 60){
 			bar.removeClass('bar-success').addClass('bar-warning');
 		}
-		$(this).fadeIn(500);
+		$(this).fadeIn(700);
 	});
 
 
@@ -71,7 +71,7 @@ function searchPhotos(searchString){
       	},
       	complete: function(){
       		console.log('complete');
-      		$('.feed').fadeIn(200);
+      		$('.feed').fadeIn(500);
 			gridShit();
 			$('.results').toggleClass('show');
 		}

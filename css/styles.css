@@ -76,6 +76,32 @@ p{
 ----------------*/
 
 .results{
-	display: none;
+	/*display: none;*/
 	height: 0;
+	opacity: 0;
+	margin-top: 30px;
+}
+
+.show{
+	-webkit-animation: show 0.5s ease-in-out;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+}
+
+
+/*-----------------
+
+	Animations
+
+------------------*/
+
+@-webkit-keyframes show{
+	0%{
+		height: 0;
+	}
+
+	100%{
+		opacity: 1;
+		height: 200px;
+	}
 }

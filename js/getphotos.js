@@ -47,6 +47,7 @@ function searchPhotos(searchString){
         url: "https://api.instagram.com/v1/tags/" + searchString + "/media/recent/?access_token=3344808.5b9e1e6.20d57cfeee9343fd8412d2355a6aa1c0",
         success: function(data) {
             for (var i = 0; i < 9; i++) {
+            	console.log(data);
         		// $(".feed").append();
         		imgSrc = data.data[i].images.standard_resolution.url;
         		console.log(data.data[i].likes.count);
@@ -62,8 +63,8 @@ function searchPhotos(searchString){
       			totalLikes = totalLikes + imgLikes;
       			totalTags = totalTags + imgTags;
       		}  
-      		console.log(totalLikes);
-        	console.log(totalTags);   
+      		$('.tags').text(totalTags);
+        	$('.likes').text(totalLikes);	
       	},
       	error: function(){
       		console.log('error');
@@ -71,7 +72,9 @@ function searchPhotos(searchString){
       	complete: function(){
       		console.log('complete');
       		$('.feed').fadeIn(200);
-			gridShit();      	}
+			gridShit();
+			$('.results').toggleClass('show');
+		}
                             
     });
 }
